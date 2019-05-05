@@ -1,0 +1,11 @@
+{
+  "name": "shopee-billing-service",
+  "version": "1.0.0",
+  "description": "billing service for shopee test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nuladwisnupambudi@gmail.com",
+  "license": "ISC"
+}
