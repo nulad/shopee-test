@@ -1,5 +1,6 @@
 const models = require('./models');
 const taxEndpoint = require('./methods/tax');
+const billingEndpoint = require('./methods/billing');
 const config = require('./config/config.json');
 
 models.configure({
@@ -11,5 +12,6 @@ models.configure({
 });
 
 module.exports = {
-    taxEndpoint
+    taxEndpoint,
+    billingEndpoint
 };

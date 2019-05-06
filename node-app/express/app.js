@@ -5,6 +5,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const taxRouter = require('./routes/tax');
+const billingRouter = require('./routes/billing');
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/taxes', taxRouter);
+app.use('/billing', billingRouter);
 
 module.exports = app;
