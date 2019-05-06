@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "ava --verbose"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -13,10 +14,22 @@
     "shopee-billing-service": "file:../shopee-billing-service"
   },
   "devDependencies": {
+    "ava": "^1.4.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-plugin-react": "^7.13.0",
+    "sinon": "^7.3.2",
+    "supertest": "^4.0.2"
+  },
+  "ava": {
+    "files": [
+      "**/tests/integration/*.test.js"
+    ],
+    "failFast": false,
+    "failWithoutAssertions": false,
+    "tap": false,
+    "powerAssert": true
   }
 }
