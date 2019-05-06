@@ -4,7 +4,7 @@
   "description": "billing service for shopee test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose"
   },
   "author": "nuladwisnupambudi@gmail.com",
   "license": "ISC",
@@ -15,10 +15,21 @@
     "sequelize": "^5.8.5"
   },
   "devDependencies": {
+    "ava": "^1.4.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-plugin-react": "^7.13.0",
+    "sinon": "^7.3.2"
+  },
+  "ava": {
+    "files": [
+      "**/tests/unit/*.test.js"
+    ],
+    "failFast": false,
+    "failWithoutAssertions": false,
+    "tap": false,
+    "powerAssert": true
   }
 }
