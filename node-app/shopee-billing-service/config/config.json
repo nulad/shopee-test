@@ -2,6 +2,6 @@
     "username": "root",
     "password": "nuladlocal123",
     "database": "shopee_test",
-    "host": "localhost",
+    "host": "mysql",
     "dialect": "mysql"
 }
