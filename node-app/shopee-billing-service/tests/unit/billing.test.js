@@ -4,7 +4,7 @@ const method = require('../../methods/billing');
 const TransactionRepo = require('../../repositories/transaction_repo');
 const TransactionItemRepo = require('../../repositories/transaction_item_repo');
 
-test.serial('create Tax Object success', async (t) => {
+test.serial('view billing success', async (t) => {
     try {
         const data = {
             user_id: 1,
@@ -47,28 +47,28 @@ test.serial('create Tax Object success', async (t) => {
         ]);
 
         const result = await method.view(data);
-        t.is(result.length, 3);
-        t.is(result[0].name, 'pizza');
-        t.is(result[1].name, '234');
-        t.is(result[2].name, 'Movies');
-        t.is(result[0].price, 1000);
-        t.is(result[1].price, 2000);
-        t.is(result[2].price, 3000);
-        t.is(result[0].tax, 100);
-        t.is(result[1].tax, 50);
-        t.is(result[2].tax, 29);
-        t.is(result[0].type, 'Food & Beverage');
-        t.is(result[1].type, 'Tobacco');
-        t.is(result[2].type, 'Entertainment');
-        t.is(result[0].amount, 1100);
-        t.is(result[1].amount, 2050);
-        t.is(result[2].amount, 3029);
+        t.is(result.transaction.length, 3);
+        t.is(result.transaction[0].name, 'pizza');
+        t.is(result.transaction[1].name, '234');
+        t.is(result.transaction[2].name, 'Movies');
+        t.is(result.transaction[0].price, 1000);
+        t.is(result.transaction[1].price, 2000);
+        t.is(result.transaction[2].price, 3000);
+        t.is(result.transaction[0].tax, 100);
+        t.is(result.transaction[1].tax, 50);
+        t.is(result.transaction[2].tax, 29);
+        t.is(result.transaction[0].type, 'Food & Beverage');
+        t.is(result.transaction[1].type, 'Tobacco');
+        t.is(result.transaction[2].type, 'Entertainment');
+        t.is(result.transaction[0].amount, 1100);
+        t.is(result.transaction[1].amount, 2050);
+        t.is(result.transaction[2].amount, 3029);
     } catch (error) {
         t.fail(error.stack);
     }
 });
 
-test.serial('create Tax Object Not Found', async (t) => {
+test.serial('view billing Not Found', async (t) => {
     try {
         const data = {
             user_id: 1,
@@ -84,7 +84,7 @@ test.serial('create Tax Object Not Found', async (t) => {
     }
 });
 
-test.serial('create Tax Object Validation Error', async (t) => {
+test.serial('view billing Validation Error', async (t) => {
     try {
         const data = {
             user_id: 1,
